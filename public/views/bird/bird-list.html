@@ -1,0 +1,21 @@
+<div>
+    <h1>Our birds!</h1>
+    <a href="#/birds/new" class="btn btn-info pull-right">Add a bird!</a>
+    <table class="table table-striped" ng-if="model.birds">
+        <thead>
+        <tr>
+            <th ng-repeat="(key, val) in model.birds[0]">{{key | uppercase}}</th>
+            <th>ACTION</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in model.birds">
+            <td ng-repeat="val in row">{{val}}</td>
+            <td>
+                <a href="#/birds/{{row.id}}/records" class="btn btn-warning btn-sm">view</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

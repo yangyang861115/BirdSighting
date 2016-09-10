@@ -1,0 +1,22 @@
+<div>
+    <a href="#/birds" class="btn btn-info pull-left">Go Back</a>
+    <a href="#/birds/{{model.id}}/records/new" class="btn btn-info pull-right">Add a record!</a>
+    <table class="table table-striped" ng-if="model.records.length > 0">
+        <thead>
+        <tr>
+            <th ng-repeat="(key, val) in model.records[0]">{{key | uppercase}}</th>
+            <th>ACTION</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in model.records">
+            <td ng-repeat="val in row">{{val}}</td>
+            <td>
+                <a href="#/birds/{{model.id}}/records/{{row.rid}}" class="btn btn-warning btn-sm">Edit</a>
+                <button ng-click="model.deleteRecord(row.rid)" class="btn btn-danger btn-sm">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
